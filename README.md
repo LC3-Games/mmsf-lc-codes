@@ -2,9 +2,9 @@
 
 Tool to allow easy copy-pasting of cipher codes, customizable into custom lists per-game. No internet connection, no extra files.
 
-> **Note**: The codes as-implemented have NOT been tested yet, so things like line breaks may need to be tweaked. Codes are taken as-is from [TREZ](https://www.therockmanexezone.com/) and have no been compared to the Legacy Collection codes yet.
+> **Note**: The codes as-implemented have been tested minimally in SF1, but they're generally as-is from [TREZ](https://www.therockmanexezone.com/) and have not been compared closely to the Legacy Collection codes.
 
-This is implemented was a Twine Sugarcube 2 project for simplicity (for Leah, specifically).
+This is implemented as a Twine Sugarcube 2 project for simplicity (for Leah, specifically).
 
 ## Install
 
@@ -19,7 +19,7 @@ This is built with Twine SugarCube 2 and Tweego.
 > See: [Tweego windows installer](https://github.com/ChapelR/tweego-installer)
 > See: [Tweego docs](https://www.motoslave.net/tweego/docs/)
 
-Begin development with with the command before. This watches files for file changes within the `src` directory, building files into `index.html`.
+Begin development with with the command below. This watches for file changes within the `src` directory, building files into `index.html`.
 
 ```BASH
 tweego -w src -o index.html
