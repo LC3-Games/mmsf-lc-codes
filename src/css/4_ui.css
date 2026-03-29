@@ -56,6 +56,10 @@ td.cipher-code {
         background-color: rgba(255, 255, 255, 0.064);
     } */
 
+    &:not(.editable) tr.copied {
+        background-color: rgba(144, 238, 144, 0.429);
+    }
+
     &.editable {
         tbody tr {
             cursor: pointer;

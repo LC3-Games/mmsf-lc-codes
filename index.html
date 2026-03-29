@@ -377,6 +377,10 @@ td.cipher-code {
         background-color: rgba(255, 255, 255, 0.064);
     } */
 
+    &:not(.editable) tr.copied {
+        background-color: rgba(144, 238, 144, 0.429);
+    }
+
     &.editable {
         tbody tr {
             cursor: pointer;
@@ -833,10 +837,6 @@ window.Engine = Engine;
 UIBar.destroy(); /* gets rid of all the annoyin' twine UI */
 Config.passages.nobr = true;
 Config.history.maxStates = 1; // No story capabilities
-
-window.SF1 = 'sf1';
-window.SF1 = 'sf2';
-window.SF1 = 'sf3';
 
 // Load data once when game loads
 $(document).one(':passageinit ', async function () {
