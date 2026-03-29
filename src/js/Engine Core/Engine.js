@@ -178,7 +178,9 @@ class Engine {
      * @param {string} datasetId
      * @returns {CipherCode|null}
      */
-    static getCipher(cipherId, datasetId) {
+    static getCipher(cipherId, datasetId = null) {
+        datasetId ??= Engine.CurrentDatasetId;
+
         return Engine.CompleteDatasets[datasetId]?.get(cipherId) ?? null;
     }
 

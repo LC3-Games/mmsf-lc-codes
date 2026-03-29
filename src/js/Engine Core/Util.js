@@ -68,8 +68,8 @@ class Util {
                             val = openLine + val;
                             openLine = null;
                         } else {
-                            // Continue building escaped string
-                            openLine += val;
+                            // Continue building escaped string, restoring the comma
+                            openLine += ", " + val;
 
                             continue;
                         }
@@ -162,16 +162,22 @@ class CopyToClipboard {
     }
 
     async copyText(element) {
-        const textToCopy = element.getAttribute("data-copy-text");
+        const id = $(element).closest('tr').data('cipher-id');
 
-        if (!textToCopy) {
+        const cipher = Engine.getCipher(parseInt(id));
+
+        if (!cipher) {
             console.warn("No text to copy found");
             return;
         }
 
+        const textToCopy = cipher.code;
+
+        console.log(cipher);
+
         // Deprecated execCommand() must be used
         // for this to function in a local context
-        var tempInput = document.createElement("input");
+        var tempInput = document.createElement("textarea");
         tempInput.style = "position: absolute; left: -1000px; top: -1000px";
         tempInput.value = textToCopy;
         document.body.appendChild(tempInput);

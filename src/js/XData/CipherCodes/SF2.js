@@ -126,199 +126,199 @@ window.cipherCodes[sf2Config.id] = new CipherCodeCollection([
     new CipherCode(
         '20',
         'Deluxe Energy',
-        `Solve the\nmysteries of\nthe world!`,
+        `Solve the mysteries of the world!`,
         ['Sub Card']
     ),
     new CipherCode(
         '21',
         'Unlocker',
-        `Crush those\nunidentified\nlife forms!`,
+        `Crush those unidentified life forms!`,
         ['Sub Card']
     ),
     new CipherCode(
         '22',
         'Search Eye',
-        `Make Brothers\nand increase your\nLink Power.`,
+        `Make Brothers and increase your Link Power.`,
         ['Sub Card']
     ),
     new CipherCode(
         '23',
         'Attack Panel',
-        `Activate\nMatter Waves with\nthe Star Carrier.`,
+        `Activate Matter Waves with the Star Carrier.`,
         ['Battle Card']
     ),
     new CipherCode(
         '24',
         'Jet Ski 3',
-        `Everyone's hero\nMegaMan!`,
+        `Everyone's hero MegaMan!`,
         ['Battle Card']
     ),
     new CipherCode(
         '25',
         'Green Carpet',
-        `Blaze through the\nEM Wave World!`,
+        `Blaze through the EM Wave World!`,
         ['Battle Card']
     ),
     new CipherCode(
         '26',
         'Mad Vulcan 3',
-        `Put together a\nkiller Link Force\nBig Bang! (LFB)`,
+        `Put together a killer Link Force Big Bang! (LFB)`,
         ['Battle Card']
     ),
     new CipherCode(
         '27',
         'Heat Upper 3',
-        `Go anywhere in\nthe world on the\nSky Wave!`,
+        `Go anywhere in the world on the Sky Wave!`,
         ['Battle Card']
     ),
     new CipherCode(
         '28',
         'Snow Ball 3',
-        `The galvanic\nblade of the\nThunder Zerker!`,
+        `The galvanic blade of the Thunder Zerker!`,
         ['Battle Card']
     ),
     new CipherCode(
         '29',
         'Stealth Lazer 3',
-        `The raging\ntyphoon of the\nWood Ninja!`,
+        `The raging typhoon of the Wood Ninja!`,
         ['Battle Card']
     ),
     new CipherCode(
         '30',
         'Mummy Hand 3',
-        `The burning\nflame of the\nFire Saurian!`,
+        `The burning flame of the Fire Saurian!`,
         ['Battle Card']
     ),
     new CipherCode(
         '31',
         'Squall 3',
-        `"The power of\nBrothers\nDouble Tribe!"`,
+        `The power of Brothers, Double Tribe!`,
         ['Battle Card']
     ),
     new CipherCode(
         '32',
         'Heat Grenade',
-        `"The Waves that\nmake it real\nMatter Waves!"`,
+        `The Waves that make it real, Matter Waves!`,
         ['Battle Card']
     ),
     new CipherCode(
         '33',
         'Scythe 3',
-        `Expand your\nBrother Band`,
+        `Expand your Brother Band`,
         ['Battle Card']
     ),
     new CipherCode(
         '34',
         'Recover 300',
-        `The legendary\ncontinent of Mu`,
+        `The legendary continent of Mu`,
         ['Battle Card']
     ),
     new CipherCode(
         '35',
         'Boo Hat 1 *1',
-        `1 Game Card\n2 versions`,
+        `1 Game Card 2 versions`,
         ['Battle Card (Star),Battle Card']
     ),
     new CipherCode(
         '36',
         'White Meteor *1',
-        `Increase your\nLink Power to add\nmore abilities`,
+        `Increase your Link Power to add more abilities`,
         ['Battle Card (Star),Battle Card']
     ),
     new CipherCode(
         '37',
         'Silver Meteor *1',
-        `"The tribes of\nlegendZerker\nNinjaand Saurian"`,
+        `The tribes of legend, Zerker, Ninja, and Saurian`,
         ['Battle Card (Star),Battle Card']
     ),
     new CipherCode(
         '38',
         'Sync Hook 3 *1',
-        `Master the power\nof the OOPArt`,
+        `Master the power of the OOPArt`,
         ['Battle Card (Star),Battle Card']
     ),
     new CipherCode(
         '39',
         'Under Shirt / 5',
-        `"12-17-2007the\n20th Anniversary\nof Mega Man!"`,
+        `12-17-2007, the 20th Anniversary of Mega Man!`,
         ['Ability Wave']
     ),
     new CipherCode(
         '40',
         'Charge Paralyze / 50',
-        `Become the\nworldwide Wave\nBattle Champion!`,
+        `Become the worldwide Wave Battle Champion!`,
         ['Ability Wave']
     ),
     new CipherCode(
         '41',
         'Charge Poison / 70',
-        `"Legendary Master\nShinhe's down\nfor whatever!"`,
+        `Legendary Master Shin, he's down for whatever!`,
         ['Ability Wave']
     ),
     new CipherCode(
         '42',
         'HP +500 / 300',
-        `Everybody say\nit loud!\nLegendary!`,
+        `Everybody say it loud! Legendary!`,
         ['Ability Wave']
     ),
     new CipherCode(
         '43',
         'Mega Class +1 / 170',
-        `Lock on target\nwith the\nMegaAttack`,
+        `Lock on target with the MegaAttack`,
         ['Ability Wave']
     ),
     new CipherCode(
         '44',
         'Giga Class +1 / 250',
-        `Everyone gather\nat the\nSky-Hi Coliseum!`,
+        `Everyone gather at the Sky-Hi Coliseum!`,
         ['Ability Wave']
     ),
     new CipherCode(
         '45',
         'Dark Phantom SP',
-        `Waves become\nvisible with the\nVisualizer!`,
+        `Waves become visible with the Visualizer!`,
         ['Battle Card']
     ),
     new CipherCode(
         '46',
         'Yeti Blizzard SP',
-        `Which Tribe did\nyou choose?`,
+        `Which Tribe did you choose?`,
         ['Battle Card']
     ),
     new CipherCode(
         '47',
         'Rogue SP',
-        `Geo's in a good\nmood lately.`,
+        `Geo's in a good mood lately.`,
         ['Battle Card']
     ),
     new CipherCode(
         '48',
         'Plesio Surf SP',
-        `Geo and Mega make\na great team!?`,
+        `Geo and Mega make a great team!?`,
         ['Battle Card']
     ),
     new CipherCode(
         '49',
         'Terra Condor SP',
-        `L-O-V-E\nI love you Sonia!`,
+        `L-O-V-E I love you Sonia!`,
         ['Battle Card']
     ),
     new CipherCode(
         '50',
         'Hollow SP',
-        `"Lighten up\nPrez!"`,
+        `Lighten up, Prez!`,
         ['Battle Card']
     ),
     new CipherCode(
         '51',
         'Taurus Fire SP',
-        `Bud loves his\nburgers!`,
+        `Bud loves his burgers!`,
         ['Battle Card']
     ),
     new CipherCode(
         '52',
         'Harp Note SP',
-        `Zack's height is\nnot listed in the\nZackpedia`,
+        `Zack's height is not listed in the Zackpedia`,
         ['Battle Card']
     ),
     new CipherCode(
@@ -330,43 +330,43 @@ window.cipherCodes[sf2Config.id] = new CipherCodeCollection([
     new CipherCode(
         '54',
         'Gemini Spark SP',
-        `"Heylet's have\na Wave Battle!"`,
+        `Hey, let's have a Wave Battle!`,
         ['Battle Card']
     ),
     new CipherCode(
         '55',
         'Cancer Bubble SP',
-        `Battle over the\nNet in MEGAMAN\nSTARFORCE 2!`,
+        `Battle over the Net in MEGAMAN STARFORCE 2!`,
         ['Battle Card']
     ),
     new CipherCode(
         '56',
         'Kung Foo Kid SP',
-        `Can you collect\neach and every\nBattle Card?`,
+        `Can you collect each and every Battle Card?`,
         ['Battle Card']
     ),
     new CipherCode(
         '57',
         'General Auriga SP',
-        `MegaMan is on the\nair and coming\nto your TV!`,
+        `MegaMan is on the air and coming to your TV!`,
         ['Battle Card']
     ),
     new CipherCode(
         '58',
         'Apollo Flame SP',
-        `Turn the page\nto get the\nlatest info!`,
+        `Turn the page to get the latest info!`,
         ['Battle Card']
     ),
     new CipherCode(
         '59',
         'Quick Ring',
-        `"Wave Battling\nit's like a form\nof greeting!"`,
+        `Wave Battling, it's like a form of greeting!`,
         ['Mega Weapon']
     ),
     new CipherCode(
         '60',
         'Sanguine Claw',
-        `Pull off a\nhigh-powered\nBest-Combo!`,
+        `Pull off a high-powered Best-Combo!`,
         ['Mega Weapon']
     ),
 ], sf2Config);

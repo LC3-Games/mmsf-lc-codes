@@ -12,7 +12,7 @@ window.cipherCodes[sf1Config.id] = new CipherCodeCollection([
     new CipherCode(
         '1',
         'D. Energy',
-        `NGAMEMA\nRESCAFROT`,
+        `NGAMEMA RESCAFROT`,
         ['Sub Card']
     ),
     new CipherCode(
@@ -114,7 +114,7 @@ window.cipherCodes[sf1Config.id] = new CipherCodeCollection([
     new CipherCode(
         '18',
         'Sync Hook 1',
-        `I love Battle\nNetwork!`,
+        `I love Battle Network!`,
         ['Battle Card']
     ),
     new CipherCode(
@@ -126,157 +126,157 @@ window.cipherCodes[sf1Config.id] = new CipherCodeCollection([
     new CipherCode(
         '20',
         'Mop Lance 3',
-        `Ride On the\nWave Road!`,
+        `Ride On the Wave Road!`,
         ['Battle Card']
     ),
     new CipherCode(
         '21',
         'Wide Wave 3',
-        `Time to bust\nsome EM\nviruses!`,
+        `Time to bust some EM viruses!`,
         ['Battle Card']
     ),
     new CipherCode(
         '22',
         'Plasma Gun 3',
-        `Win big with a\nStar Force Big\nBang!`,
+        `Win big with a Star Force Big Bang!`,
         ['Battle Card']
     ),
     new CipherCode(
         '23',
         'Brave Sword 3',
-        `Let's combine\nour strength!`,
+        `Let's combine our strength!`,
         ['Battle Card']
     ),
     new CipherCode(
         '24',
         'Taurus Fire SP',
-        `Store info in\nyour Transer!`,
+        `Store info in your Transer!`,
         ['Battle Card']
     ),
     new CipherCode(
         '25',
         'Pegasus Magic SP',
-        `Go On Air\nto trade info\nwith friends.`,
+        `Go On Air to trade info with friends.`,
         ['Battle Card']
     ),
     new CipherCode(
         '26',
         'Fire Bazooka 3',
-        `Transers are\nreally useful!`,
+        `Transers are really useful!`,
         ['Battle Card']
     ),
     new CipherCode(
         '27',
         'Vulcan Seed 3',
-        `Let's send\nsome e-mail!`,
+        `Let's send some e-mail!`,
         ['Battle Card']
     ),
     new CipherCode(
         '28',
         'Cloaker',
-        `Battle your\nfriends\nOn Air!`,
+        `Battle your friends On Air!`,
         ['Sub Card']
     ),
     new CipherCode(
         '29',
         'Freeze Knuckle',
-        `How many more\nuntil you have\nall the cards?`,
+        `How many more until you have all the cards?`,
         ['Battle Card']
     ),
     new CipherCode(
         '30',
         'Voltic Eye 3',
-        `Wave Battle\nwith your\nrare cards!`,
+        `Wave Battle with your rare cards!`,
         ['Battle Card']
     ),
     new CipherCode(
         '31',
         '(JP)(EU)(SFLC) Bubble Fist / (NA) Steel Fist',
-        `Time to go\nOn Air!`,
+        `Time to go On Air!`,
         ['Mega Weapon']
     ),
     new CipherCode(
         '32',
         'Gatling 3',
-        `"PegasusLeo\nDragon - which\nis for you?"`,
+        `Pegasus, Leo, Dragon - which is for you?`,
         ['Battle Card']
     ),
     new CipherCode(
         '33',
         'Grand Wave 3',
-        `Get stronger\nthrough\nBrotherBands!`,
+        `Get stronger through BrotherBands!`,
         ['Battle Card']
     ),
     new CipherCode(
         '34',
         'PorcuNeedles',
-        `"Wave Change!\nGeo Stelar\nOn The Air!!"`,
+        `Wave Change! Geo Stelar On The Air!!`,
         ['Mega Weapon']
     ),
     new CipherCode(
         '35',
         'Jumbo Hammer 3',
-        `Ride On!\nWave Battle!`,
+        `Ride On! Wave Battle!`,
         ['Battle Card']
     ),
     new CipherCode(
         '36',
         'Time Bomb 3',
-        `Let's form a\nBrotherBand!`,
+        `Let's form a BrotherBand!`,
         ['Battle Card']
     ),
     new CipherCode(
         '37',
         'Unlocker',
-        `Beat viruses\nwith Battle\nCards!`,
+        `Beat viruses with Battle Cards!`,
         ['Sub Card']
     ),
     new CipherCode(
         '38',
         'Jet Attack 3',
-        `Only you can\nprotect the\nWave Road!`,
+        `Only you can protect the Wave Road!`,
         ['Battle Card']
     ),
     new CipherCode(
         '39',
         'Ice Meteor 3',
-        `Fuse with\nMega to\nWave Change!`,
+        `Fuse with Mega to Wave Change!`,
         ['Battle Card']
     ),
     new CipherCode(
         '40',
         'Poison Knuckle',
-        `Transform with\nStar Force\npower!`,
+        `Transform with Star Force power!`,
         ['Battle Card']
     ),
     new CipherCode(
         '41',
         'Crown Thunder SP',
-        `Power up with\npals through\nBrotherBands.`,
+        `Power up with pals through BrotherBands.`,
         ['Battle Card']
     ),
     new CipherCode(
         '42',
         'Gemini Spark SP',
-        `Show off your\nskills in hot\nWave Battles!`,
+        `Show off your skills in hot Wave Battles!`,
         ['Battle Card']
     ),
     new CipherCode(
         '43',
         'Cygnus Wing SP',
-        `Fly away for\nskies unknown!`,
+        `Fly away for skies unknown!`,
         ['Battle Card']
     ),
     new CipherCode(
         '44',
         'Dragon Sky SP',
-        `Legendary\nMaster Shin`,
+        `Legendary Master Shin`,
         ['Battle Card']
     ),
     new CipherCode(
         '45',
         'Queen Ophiuca SP',
-        `Brother Action\nRPG`,
+        `Brother Action RPG`,
         ['Battle Card']
     ),
     new CipherCode(
@@ -288,85 +288,85 @@ window.cipherCodes[sf1Config.id] = new CipherCodeCollection([
     new CipherCode(
         '47',
         'Chain Bubble 3',
-        `"Dec. 171986"`,
+        `Dec., 171986`,
         ['Battle Card']
     ),
     new CipherCode(
         '48',
         'Stun Knuckle',
-        `The internet\nconnects\nthe world.`,
+        `The internet connects the world.`,
         ['Battle Card']
     ),
     new CipherCode(
         '49',
         'Ghost Pulse 3',
-        `Check out the\nMega Man\nwebsite!`,
+        `Check out the Mega Man website!`,
         ['Battle Card']
     ),
     new CipherCode(
         '50',
         'Recovery 300',
-        `Search for\ninfo on the\nweb!`,
+        `Search for info on the web!`,
         ['Battle Card']
     ),
     new CipherCode(
         '51',
         'Sync Hook 3',
-        `Our Brother-\nBands make us\nstrong!`,
+        `Our Brother- Bands make us strong!`,
         ['Battle Card']
     ),
     new CipherCode(
         '52',
         'Harp Note SP',
-        `Awaken the\nWave Battler\ninside!`,
+        `Awaken the Wave Battler inside!`,
         ['Battle Card']
     ),
     new CipherCode(
         '53',
         'Libra Scales SP',
-        `Visualizer:\nGlasses of\nMystery`,
+        `Visualizer: Glasses of Mystery`,
         ['Battle Card']
     ),
     new CipherCode(
         '54',
         'Cancer Bubble SP',
-        `Wave Battle\nin the Wave\nWorld!`,
+        `Wave Battle in the Wave World!`,
         ['Battle Card']
     ),
     new CipherCode(
         '55',
         'Wolf Woods SP',
-        `A. Boreal's\nAMAKEN`,
+        `A. Boreal's AMAKEN`,
         ['Battle Card']
     ),
     new CipherCode(
         '56',
         'Leo Kingdom SP',
-        `"Star Force\nthe ultimate\npower!"`,
+        `Star Force the ultimate power!`,
         ['Battle Card']
     ),
     new CipherCode(
         '57',
         'Break Sabre',
-        `Wave Battling\nis wild!`,
+        `Wave Battling is wild!`,
         ['Battle Card']
     ),
     new CipherCode(
         '58',
         'Moai Fall 3',
-        `3 different\npowers can\nbe yours!`,
+        `3 different powers can be yours!`,
         ['Battle Card']
     ),
     new CipherCode(
         '59',
         'Cloud Shot 3',
-        `Proof of\nFriendship -\nBrotherBand!`,
+        `Proof of Friendship - BrotherBand!`,
         ['Battle Card']
     ),
     new CipherCode(
         '60',
         'Sticky Rain 3',
-        `Mega Man 20th\nAnniversary\nGame`,
+        `Mega Man 20th Anniversary Game`,
         ['Battle Card']
     ),
 ], sf1Config);
