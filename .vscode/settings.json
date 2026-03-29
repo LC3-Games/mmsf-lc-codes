@@ -1,0 +1,11 @@
+{
+    "twee3LanguageTools.storyformat.current": "sugarcube-2",
+    "cSpell.words": [
+        "ciphertable",
+    ],
+    "spellright.parserByClass": {
+        "twee3-sugarcube-2": {
+            "parser": "plain"
+        }
+    },
+}

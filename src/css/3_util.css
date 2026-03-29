@@ -1,0 +1,25 @@
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+#table-actions {
+    display: grid;
+    margin: 1rem 0;
+    grid-template-columns: max-content 1fr;
+
+    div:last-child {
+        text-align: right;
+    }
+}

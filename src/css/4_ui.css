@@ -1,0 +1,93 @@
+.active button {
+    background: darkgray;
+    border: 1px solid lightgrey;
+    pointer-events: none;
+}
+
+.info-block {
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 6px 12px 12px;
+}
+
+.highlight {
+    background: yellow;
+}
+
+.info-block {
+    background: #444;
+}
+
+.green-button button {
+    background-color: darkgreen;
+    border: 1px solid green;
+
+    &:hover {
+        background-color: green;
+    }
+}
+
+.red-button button {
+    background-color: darkmagenta;
+    border: 1px solid magenta;
+
+    &:hover {
+        background-color: magenta;
+    }
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid white;
+}
+
+td.cipher-code {
+    min-width: 20%;
+}
+
+#cipher-table {
+    /* TODO: if we want to allow toggling off certain columns */
+    /* th[data-enabled]:hover {
+        background-color: rgba(255, 255, 255, 0.064);
+    } */
+
+    &.editable {
+        tbody tr {
+            cursor: pointer;
+
+            &.active {
+                background-color: green;
+            }
+
+            &:hover {
+                background-color: rgba(144, 238, 144, 0.429);
+            }
+        }
+
+        .is-selected-indicator {
+            background-color: red;
+            vertical-align: middle;
+            text-align: center;
+
+            &::before {
+                color: white;
+                content: "X";
+            }
+        }
+
+        .selected {
+            .is-selected-indicator {
+                background-color: green;
+
+                &::before {
+                    content: "✔";
+                }
+            }
+        }
+    }
+}

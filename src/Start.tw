@@ -1,0 +1,179 @@
+:: StoryData
+{
+	"ifid": "EA15FDAC-0B71-4DD2-B2D9-C6FCE4369D32",
+	"format": "SugarCube",
+	"format-version": "2.37.3"
+}
+
+:: StoryTitle
+
+MMSF Cipher Codes
+
+:: Start
+
+<div>
+    <div class="float-right text-right">
+        <form>
+            <input type="file" id="import-file">
+
+            <button id="import" type="button">
+                Import
+            </button>
+        </form>
+        <button id="export">
+            Export
+        </button>
+    </div>
+
+    <div>
+        <h3 style="display: inline-block; margin-top: 0">
+            Mega Man Star Force Cipher Codes
+        </h3>
+
+        <<link "Help">>
+            <<run Dialog.wikiPassage("Help").open()>>
+        <</link>>
+    </div>
+</div>
+
+<div class="info-block" style="max-width: 80%;">
+    <b>Note:</b> Content below is based on <a href="https://www.therockmanexezone.com/" target="_blank">TREZ</a> has <b>not</b> been tested in use yet or compared with Legacy Collection codes.
+</div>
+
+<<do>>
+    <div id="table-actions">
+        <div>
+            <<set _selected = window.Engine.CurrentDataset>>
+
+            <<if !window.Engine.IsEditMode>>
+                <span class="green-button">
+                <<button `"Edit " + _selected.label`>>
+                    <<run window.Engine.IsEditMode = true>>
+
+                    <<redo>>
+                <</button>>
+                </span>
+
+                <<button "Clear Copied">>
+                    <<run $('#cipher-table tr').removeClass('copied')>>
+                <</button>>
+            <<else>>
+                <span class="red-button">
+                <<button `"Stop Editing " + _selected.label`>>
+                    <<run window.Engine.IsEditMode = false>>
+                    <<redo>>
+                <</button>>
+                </span>
+
+                <button disabled>Clear Copied</button>
+            <</if>>
+        </div>
+
+        <div>
+            <<for _dataset range window.Engine.CompleteDatasets>>
+                <<capture _dataSetId>>
+                    <<set _dataSetId = _dataset.id>>
+
+                    <<if _dataSetId ===  window.Engine.CurrentDatasetId>>
+                        <button
+                            disabled
+                            title='Current dataset'
+                        >
+                            <<= _dataset.label>>
+                        </button>
+                    <<else>>
+                        <<button _dataset.label>>
+                            <<run window.Engine.CurrentDatasetId = _dataSetId>>
+                            <<redo>>
+                        <</button>>
+                    <</if>>
+                <</capture>>
+            <</for>>
+        </div>
+    </div>
+
+    <div>
+        <<if window.Engine.IsEditMode>>
+            <div class="info-block">Click rows to toggle inclusion. Green rows are included.</div>
+        <</if>>
+
+        <<ciphertable `window.Engine.CurrentDataset`>>
+    </div>
+<</do>>
+
+
+:: CipherTable [widget]
+
+<<widget "ciphertable">>
+    <<set _dataset = _args[0]>>
+
+    <table
+        id="cipher-table"
+        @class="window.Engine.IsEditMode ? 'editable' : 'locked'"
+        @data-dataset-id="_dataset.id"
+    >
+    <thead>
+        <tr>
+            <<if window.Engine.IsEditMode>>
+                <th></th>
+            <</if>>
+            <th>Code</th>
+            <th
+                @data-enabled="window.Engine.columnIsDisabled('item')"
+            >Item</th>
+            <th
+                @data-enabled="window.Engine.columnIsDisabled('tags')"
+            >Tags</th>
+            <th
+                @data-enabled="window.Engine.columnIsDisabled('id')"
+            >ID</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <<for _code range _dataset.codes>>
+            <tr
+                @class="window.Engine.cipherIsSelected(_code.id) ? 'selected' : ''"
+                @data-cipher-id="_code.id"
+            >
+                <<if !window.Engine.IsEditMode>>
+                    <td
+                        class="cipher-code"
+                    >
+                        <div
+                            @data-copy-text="_code.code"
+                            class="copy-cell"
+                            title="Click to copy"
+                        >
+                            <code>
+                                <<= _code.code>>
+                            </code>
+                        </div>
+                    </td>
+                <<else>>
+                    <td class="is-selected-indicator"></td>
+                    <td>
+                        <code>
+                            <<= _code.code>>
+                        </code>
+                    </td>
+                <</if>>
+                <td><<= _code.item>></td>
+                <td><<= _code.tags.toString()>></td>
+                <td><<= _code.id>></td>
+            </tr>
+        <</for>>
+    </tbody>
+
+    </table>
+<</widget>>
+
+:: Help
+
+<p><b>Click</b> a <b>Code</b> to have it copied to your clipboard.</p>
+
+<p>Click the <b>Edit</b> button to customize which codes should or should not appear. Just click their respective rows. All changes are saved automatically.</p>
+
+<p>Use the <b>Export</b> and <b>Import</b> buttons to share/backup your settings</p>
+
+<p>This is a 100% local tool using your browser's localstorage, so be sure you <b>backup</b> (export) your settings once you're happy. Moving/renaming the file will lose access to previous storage, but you can undo that (or import).</p>

@@ -1,0 +1,34 @@
+html::before {
+    content: "";
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    pointer-events: none;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body {
+    background: transparent;
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a.link-external::after {
+    display: none;
+}
+
+#story {
+    padding: 0;
+    margin: 2.5rem 0;
+}
+
+#passages {
+    padding: 2rem 1rem;
+    background: rgba(0, 0, 0, 0.75);
+    border: 2px grey inset;
+}

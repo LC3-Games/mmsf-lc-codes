@@ -1,0 +1,60 @@
+.copy-tooltip {
+    display: block;
+    font-size: 80%;
+    position: fixed;
+    background: green;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    transition: all 300ms;
+
+    width: fit-content;
+
+    opacity: 0;
+
+    z-index: 50;
+
+    pointer-events: none;
+
+    &.active {
+        opacity: 100;
+        -webkit-animation: slide-up 0.15s cubic-bezier(0.51, 0.92, 0.265, 1.55)
+            both;
+        animation: slide-up 0.15s cubic-bezier(0.51, 0.92, 0.265, 1.55) both;
+    }
+
+    &.inactive {
+        -webkit-animation: slide-up 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+            reverse both;
+        animation: slide-up 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse
+            both;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 98%;
+        left: 50%;
+        margin-left: -8px;
+        width: 0;
+        height: 0;
+        border-top: 8px solid $color__rva_teal;
+        border-right: 8px solid transparent;
+        border-left: 8px solid transparent;
+    }
+
+    z-index: 2001;
+}
+
+[data-copy-text] {
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.064);
+    }
+}
