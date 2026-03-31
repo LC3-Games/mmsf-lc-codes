@@ -6,7 +6,7 @@ This is implemented as a Twine Sugarcube 2 project for simplicity (for Leah, spe
 
 > **Note**: Code came from [TREZ](https://www.therockmanexezone.com/) and have only been tested where noted (below). There have been some minor changes in the collection (i.e. MegaMan => Mega Man)
 
-- MM SF1: Untested
+- MM SF1: Partially tested
 - MM SF2: Tested & Confirmed
 - MM SF3: Untested
 

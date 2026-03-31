@@ -342,7 +342,7 @@ window.cipherCodes[sf1Config.id] = new CipherCodeCollection([
     new CipherCode(
         '56',
         'Leo Kingdom SP',
-        `Star Force the ultimate power!`,
+        `Star Force, the ultimate power!`,
         ['Battle Card']
     ),
     new CipherCode(
