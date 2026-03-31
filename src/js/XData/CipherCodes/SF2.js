@@ -150,7 +150,7 @@ window.cipherCodes[sf2Config.id] = new CipherCodeCollection([
     new CipherCode(
         '24',
         'Jet Ski 3',
-        `Everyone's hero MegaMan!`,
+        `Everyone's hero Mega Man!`,
         ['Battle Card']
     ),
     new CipherCode(
@@ -264,7 +264,7 @@ window.cipherCodes[sf2Config.id] = new CipherCodeCollection([
     new CipherCode(
         '43',
         'Mega Class +1 / 170',
-        `Lock on target with the MegaAttack`,
+        `Lock on target with the Mega Attack`,
         ['Ability Wave']
     ),
     new CipherCode(
@@ -336,7 +336,7 @@ window.cipherCodes[sf2Config.id] = new CipherCodeCollection([
     new CipherCode(
         '55',
         'Cancer Bubble SP',
-        `Battle over the Net in MEGAMAN STARFORCE 2!`,
+        `Battle over the Net in MEGA MAN STAR FORCE 2!`,
         ['Battle Card']
     ),
     new CipherCode(
@@ -348,7 +348,7 @@ window.cipherCodes[sf2Config.id] = new CipherCodeCollection([
     new CipherCode(
         '57',
         'General Auriga SP',
-        `MegaMan is on the air and coming to your TV!`,
+        `Mega Man is on the air and coming to your TV!`,
         ['Battle Card']
     ),
     new CipherCode(

@@ -2,9 +2,13 @@
 
 Tool to allow easy copy-pasting of cipher codes, customizable into custom lists per-game. No internet connection, no extra files.
 
-> **Note**: The codes as-implemented have been tested minimally in SF1, but they're generally as-is from [TREZ](https://www.therockmanexezone.com/) and have not been compared closely to the Legacy Collection codes.
-
 This is implemented as a Twine Sugarcube 2 project for simplicity (for Leah, specifically).
+
+> **Note**: Code came from [TREZ](https://www.therockmanexezone.com/) and have only been tested where noted (below). There have been some minor changes in the collection (i.e. MegaMan => Mega Man)
+
+- MM SF1: Untested
+- MM SF2: Tested & Confirmed
+- MM SF3: Untested
 
 ## Install
 
