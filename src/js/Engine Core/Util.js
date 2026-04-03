@@ -173,8 +173,6 @@ class CopyToClipboard {
 
         const textToCopy = cipher.code;
 
-        console.log(cipher);
-
         // Deprecated execCommand() must be used
         // for this to function in a local context
         var tempInput = document.createElement("textarea");

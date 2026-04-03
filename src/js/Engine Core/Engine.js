@@ -8,6 +8,7 @@ class Engine {
     editedDatasets;
 
     isEditMode = false;
+    static toggleAllSelected = false;
 
     // ? Not planned for initial release since probably too impactful
     // ? A "compact" mode toggle would probably be better
@@ -147,6 +148,41 @@ class Engine {
         }
     }
 
+    static getRowClass(cipherId) {
+        let classes = '';
+
+        if (this.IsEditMode) {
+            classes += this.cipherIsSelected(cipherId) ? 'selected' : '';
+        } else {
+            classes += 'copyable-row';
+        }
+
+        return classes;
+    }
+
+    static toggleAll() {
+        if (!this.Instance.isEditMode) {
+            return;
+        }
+
+        const dataset = this.CurrentDataset;
+        const editedDataset = this.EditedDatasets[this.CurrentDatasetId];
+
+        for (const key in dataset.codes) {
+            if (this.toggleAllSelected) {
+                editedDataset.add(dataset.codes[key]);
+            } else {
+                editedDataset.remove(dataset.codes[key]);
+            }
+        }
+
+        this.Instance.save();
+
+        this.toggleAllSelected = !this.toggleAllSelected;
+
+        $.wiki('<<redo>>');
+    }
+
     /**
      * @param {number} cipherId
      * @param {string} datasetId
@@ -162,10 +198,10 @@ class Engine {
             return false;
         }
 
-        if (Engine.EditedDatasets[datasetId].has(cipher.id)) {
-            Engine.EditedDatasets[datasetId].remove(cipher);
+        if (this.EditedDatasets[datasetId].has(cipher.id)) {
+            this.EditedDatasets[datasetId].remove(cipher);
         } else {
-            Engine.EditedDatasets[datasetId].add(cipher);
+            this.EditedDatasets[datasetId].add(cipher);
         }
 
         this.Instance.save();
@@ -179,15 +215,15 @@ class Engine {
      * @returns {CipherCode|null}
      */
     static getCipher(cipherId, datasetId = null) {
-        datasetId ??= Engine.CurrentDatasetId;
+        datasetId ??= this.CurrentDatasetId;
 
-        return Engine.CompleteDatasets[datasetId]?.get(cipherId) ?? null;
+        return this.CompleteDatasets[datasetId]?.get(cipherId) ?? null;
     }
 
     static cipherIsSelected(cipherId, datasetId = null) {
         datasetId ??= this.CurrentDatasetId;
 
-        return Engine.EditedDatasets[datasetId].has(cipherId);
+        return this.EditedDatasets[datasetId].has(cipherId);
     }
 
     static columnIsDisabled(columnId) {
@@ -214,12 +250,15 @@ class Engine {
         return this.Instance.isEditMode;
     }
 
+    /**
+     * @returns {CipherCodeCollection}
+     */
     static get CurrentDataset() {
         if (this.IsEditMode) {
-            return Engine.CompleteDatasets[this.CurrentDatasetId];
+            return this.CompleteDatasets[this.CurrentDatasetId];
         }
 
-        return Engine.EditedDatasets[this.CurrentDatasetId];
+        return this.EditedDatasets[this.CurrentDatasetId];
     }
 
     static get Instance() {

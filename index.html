@@ -603,6 +603,7 @@ class Engine {
     editedDatasets;
 
     isEditMode = false;
+    static toggleAllSelected = false;
 
     // ? Not planned for initial release since probably too impactful
     // ? A "compact" mode toggle would probably be better
@@ -742,6 +743,41 @@ class Engine {
         }
     }
 
+    static getRowClass(cipherId) {
+        let classes = '';
+
+        if (this.IsEditMode) {
+            classes += this.cipherIsSelected(cipherId) ? 'selected' : '';
+        } else {
+            classes += 'copyable-row';
+        }
+
+        return classes;
+    }
+
+    static toggleAll() {
+        if (!this.Instance.isEditMode) {
+            return;
+        }
+
+        const dataset = this.CurrentDataset;
+        const editedDataset = this.EditedDatasets[this.CurrentDatasetId];
+
+        for (const key in dataset.codes) {
+            if (this.toggleAllSelected) {
+                editedDataset.add(dataset.codes[key]);
+            } else {
+                editedDataset.remove(dataset.codes[key]);
+            }
+        }
+
+        this.Instance.save();
+
+        this.toggleAllSelected = !this.toggleAllSelected;
+
+        $.wiki('<<redo>>');
+    }
+
     /**
      * @param {number} cipherId
      * @param {string} datasetId
@@ -757,10 +793,10 @@ class Engine {
             return false;
         }
 
-        if (Engine.EditedDatasets[datasetId].has(cipher.id)) {
-            Engine.EditedDatasets[datasetId].remove(cipher);
+        if (this.EditedDatasets[datasetId].has(cipher.id)) {
+            this.EditedDatasets[datasetId].remove(cipher);
         } else {
-            Engine.EditedDatasets[datasetId].add(cipher);
+            this.EditedDatasets[datasetId].add(cipher);
         }
 
         this.Instance.save();
@@ -774,15 +810,15 @@ class Engine {
      * @returns {CipherCode|null}
      */
     static getCipher(cipherId, datasetId = null) {
-        datasetId ??= Engine.CurrentDatasetId;
+        datasetId ??= this.CurrentDatasetId;
 
-        return Engine.CompleteDatasets[datasetId]?.get(cipherId) ?? null;
+        return this.CompleteDatasets[datasetId]?.get(cipherId) ?? null;
     }
 
     static cipherIsSelected(cipherId, datasetId = null) {
         datasetId ??= this.CurrentDatasetId;
 
-        return Engine.EditedDatasets[datasetId].has(cipherId);
+        return this.EditedDatasets[datasetId].has(cipherId);
     }
 
     static columnIsDisabled(columnId) {
@@ -809,12 +845,15 @@ class Engine {
         return this.Instance.isEditMode;
     }
 
+    /**
+     * @returns {CipherCodeCollection}
+     */
     static get CurrentDataset() {
         if (this.IsEditMode) {
-            return Engine.CompleteDatasets[this.CurrentDatasetId];
+            return this.CompleteDatasets[this.CurrentDatasetId];
         }
 
-        return Engine.EditedDatasets[this.CurrentDatasetId];
+        return this.EditedDatasets[this.CurrentDatasetId];
     }
 
     static get Instance() {
@@ -1028,8 +1067,8 @@ class Util {
                             val = openLine + val;
                             openLine = null;
                         } else {
-                            // Continue building escaped string
-                            openLine += val;
+                            // Continue building escaped string, restoring the comma
+                            openLine += ", " + val;
 
                             continue;
                         }
@@ -1132,8 +1171,6 @@ class CopyToClipboard {
         }
 
         const textToCopy = cipher.code;
-
-        console.log(cipher);
 
         // Deprecated execCommand() must be used
         // for this to function in a local context
@@ -2305,7 +2342,7 @@ window.cipherCodes[sf3Config.id] = new CipherCodeCollection([
 &lt;/div&gt;
 
 &lt;div class=&quot;info-block&quot; style=&quot;max-width: 80%;&quot;&gt;
-    &lt;b&gt;Note:&lt;/b&gt; Content below is based on &lt;a href=&quot;https://www.therockmanexezone.com/&quot; target=&quot;_blank&quot;&gt;TREZ&lt;/a&gt; has &lt;b&gt;not&lt;/b&gt; been tested in use yet or compared with Legacy Collection codes.
+    &lt;b&gt;Note:&lt;/b&gt; Content below is based on &lt;a href=&quot;https://www.therockmanexezone.com/&quot; target=&quot;_blank&quot;&gt;TREZ&lt;/a&gt; and has been &lt;b&gt;partially&lt;/b&gt; tested with the Legacy collection.
 &lt;/div&gt;
 
 &lt;&lt;do&gt;&gt;
@@ -2334,6 +2371,14 @@ window.cipherCodes[sf3Config.id] = new CipherCodeCollection([
                 &lt;/span&gt;
 
                 &lt;button disabled&gt;Clear Copied&lt;/button&gt;
+
+                &lt;span class=&quot;green-button&quot;&gt;
+                &lt;&lt;button `&quot;Toggle All &quot; + (window.Engine.toggleAllSelected ? &#39;On&#39; : &#39;Off&#39;)`&gt;&gt;
+                    &lt;&lt;run window.Engine.toggleAll()&gt;&gt;
+
+                    &lt;&lt;redo&gt;&gt;
+                &lt;&lt;/button&gt;&gt;
+                &lt;/span&gt;
             &lt;&lt;/if&gt;&gt;
         &lt;/div&gt;
 
@@ -2395,36 +2440,34 @@ window.cipherCodes[sf3Config.id] = new CipherCodeCollection([
 
     &lt;tbody&gt;
         &lt;&lt;for _code range _dataset.codes&gt;&gt;
-            &lt;tr
-                @class=&quot;window.Engine.cipherIsSelected(_code.id) ? &#39;selected&#39; : &#39;&#39;&quot;
-                @data-cipher-id=&quot;_code.id&quot;
-            &gt;
-                &lt;&lt;if !window.Engine.IsEditMode&gt;&gt;
-                    &lt;td
-                        class=&quot;cipher-code&quot;
-                    &gt;
-                        &lt;div
-                            @data-copy-text=&quot;_code.code&quot;
-                            class=&quot;copy-cell&quot;
-                            title=&quot;Click to copy&quot;
-                        &gt;
-                            &lt;code&gt;
-                                &lt;&lt;= _code.code&gt;&gt;
-                            &lt;/code&gt;
-                        &lt;/div&gt;
-                    &lt;/td&gt;
-                &lt;&lt;else&gt;&gt;
+            &lt;&lt;if window.Engine.IsEditMode&gt;&gt;
+                &lt;tr
+                    @class=&quot;window.Engine.cipherIsSelected(_code.id) ? &#39;selected&#39; : &#39;&#39;&quot;
+                    @data-cipher-id=&quot;_code.id&quot;
+                &gt;
                     &lt;td class=&quot;is-selected-indicator&quot;&gt;&lt;/td&gt;
-                    &lt;td&gt;
-                        &lt;code&gt;
-                            &lt;&lt;= _code.code&gt;&gt;
-                        &lt;/code&gt;
+                    &lt;td class=&quot;cipher-code&quot;&gt;
+                        &lt;code&gt;&lt;&lt;= _code.code&gt;&gt;&lt;/code&gt;
                     &lt;/td&gt;
-                &lt;&lt;/if&gt;&gt;
-                &lt;td&gt;&lt;&lt;= _code.item&gt;&gt;&lt;/td&gt;
-                &lt;td&gt;&lt;&lt;= _code.tags.toString()&gt;&gt;&lt;/td&gt;
-                &lt;td&gt;&lt;&lt;= _code.id&gt;&gt;&lt;/td&gt;
-            &lt;/tr&gt;
+                    &lt;td&gt;&lt;&lt;= _code.item&gt;&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;&lt;= _code.tags.toString()&gt;&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;&lt;= _code.id&gt;&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;&lt;else&gt;&gt;
+                &lt;tr
+                    class=&quot;copyable-row&quot;
+                    @data-cipher-id=&quot;_code.id&quot;
+                    @data-copy-text=&quot;_code.code&quot;
+                    title=&quot;Click to copy&quot;
+                &gt;
+                    &lt;td class=&quot;cipher-code&quot;&gt;
+                        &lt;code&gt;&lt;&lt;= _code.code&gt;&gt;&lt;/code&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;&lt;&lt;= _code.item&gt;&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;&lt;= _code.tags.toString()&gt;&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;&lt;= _code.id&gt;&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;&lt;/if&gt;&gt;
         &lt;&lt;/for&gt;&gt;
     &lt;/tbody&gt;
 

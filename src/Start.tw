@@ -37,7 +37,7 @@ MMSF Cipher Codes
 </div>
 
 <div class="info-block" style="max-width: 80%;">
-    <b>Note:</b> Content below is based on <a href="https://www.therockmanexezone.com/" target="_blank">TREZ</a> has <b>not</b> been tested in use yet or compared with Legacy Collection codes.
+    <b>Note:</b> Content below is based on <a href="https://www.therockmanexezone.com/" target="_blank">TREZ</a> and has been <b>partially</b> tested with the Legacy collection.
 </div>
 
 <<do>>
@@ -66,6 +66,14 @@ MMSF Cipher Codes
                 </span>
 
                 <button disabled>Clear Copied</button>
+
+                <span class="green-button">
+                <<button `"Toggle All " + (window.Engine.toggleAllSelected ? 'On' : 'Off')`>>
+                    <<run window.Engine.toggleAll()>>
+
+                    <<redo>>
+                <</button>>
+                </span>
             <</if>>
         </div>
 
@@ -132,36 +140,34 @@ MMSF Cipher Codes
 
     <tbody>
         <<for _code range _dataset.codes>>
-            <tr
-                @class="window.Engine.cipherIsSelected(_code.id) ? 'selected' : ''"
-                @data-cipher-id="_code.id"
-            >
-                <<if !window.Engine.IsEditMode>>
-                    <td
-                        class="cipher-code"
-                    >
-                        <div
-                            @data-copy-text="_code.code"
-                            class="copy-cell"
-                            title="Click to copy"
-                        >
-                            <code>
-                                <<= _code.code>>
-                            </code>
-                        </div>
-                    </td>
-                <<else>>
+            <<if window.Engine.IsEditMode>>
+                <tr
+                    @class="window.Engine.cipherIsSelected(_code.id) ? 'selected' : ''"
+                    @data-cipher-id="_code.id"
+                >
                     <td class="is-selected-indicator"></td>
-                    <td>
-                        <code>
-                            <<= _code.code>>
-                        </code>
+                    <td class="cipher-code">
+                        <code><<= _code.code>></code>
                     </td>
-                <</if>>
-                <td><<= _code.item>></td>
-                <td><<= _code.tags.toString()>></td>
-                <td><<= _code.id>></td>
-            </tr>
+                    <td><<= _code.item>></td>
+                    <td><<= _code.tags.toString()>></td>
+                    <td><<= _code.id>></td>
+                </tr>
+            <<else>>
+                <tr
+                    class="copyable-row"
+                    @data-cipher-id="_code.id"
+                    @data-copy-text="_code.code"
+                    title="Click to copy"
+                >
+                    <td class="cipher-code">
+                        <code><<= _code.code>></code>
+                    </td>
+                    <td><<= _code.item>></td>
+                    <td><<= _code.tags.toString()>></td>
+                    <td><<= _code.id>></td>
+                </tr>
+            <</if>>
         <</for>>
     </tbody>
 
